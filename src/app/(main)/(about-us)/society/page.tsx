@@ -1,0 +1,133 @@
+"use client";
+import React, { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Heading from "@/components/ui/heading";
+import Content from "@/components/ui/content";
+import { useStore } from "@/store";
+import { useWebsiteInfoByInstitute } from "@/api/api-hooks";
+import FounderMessage from "./_ui/founder-message";
+import About from "./_ui/about";
+import VisionMission from "./_ui/vision-mission";
+import OrganisationStructure from "./_ui/organisation-structure";
+import { Menu } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import HeadingWithImage from "@/components/ui/heading-with-image";
+
+const EducationSocietyUI = () => {
+  const [selectedContent, setSelectedContent] = useState("About");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const id = useStore((state) => state.id);
+  const { data: websiteInfoByInstitute } = useWebsiteInfoByInstitute(id);
+  const Sidebar = [
+    "About",
+    "Founder Message",
+    "Vision Mission",
+    "Organisation Structure",
+  ];
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const handleContentSelect = (item: any) => {
+    setSelectedContent(item);
+    setIsSidebarOpen(false);
+  };
+
+  return (
+    <div className="flex flex-col  ">
+      {/* Mobile menu button */}
+      <button
+        className="md:hidden p-4 bg-background text-primary"
+        onClick={toggleSidebar}
+      >
+        <Menu size={24} />
+      </button>
+      <HeadingWithImage>Society</HeadingWithImage>
+      {/* Sidebar */}
+      <div className="flex flex-col md:flex-row">
+        <div
+          className={`${
+            isSidebarOpen ? "block" : "hidden"
+          } md:block w-full md:w-72 bg-gray-100 p-4`}
+        >
+          <ul>
+            {Sidebar.map((item, index) => (
+              <li key={index} className="mb-2">
+                <button
+                  className={`w-full text-left p-4 m-1 hover:text-primary hover:font-semibold border-b-2  hover:border-primary duration-300 ${
+                    selectedContent === item
+                      ? "border-primary font-semibold text-primary border-b-2 "
+                      : "border-transparent"
+                  }`}
+                  onClick={() => handleContentSelect(item)}
+                >
+                  {item}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <Separator
+          orientation="vertical"
+          className="mx-2 border-[1px] border-gray-100 h-screen hidden md:block"
+        />
+
+        {/* Main content */}
+        <div className="flex-1 p-6">
+          {selectedContent === "Founder Message" ? (
+            <FounderMessage
+              designation={
+                websiteInfoByInstitute?.one_ins?.landing_control
+                  ?.about_society_dynamic?.founder_message_designation
+              }
+              image={
+                websiteInfoByInstitute?.one_ins?.landing_control
+                  ?.about_society_dynamic?.founder_message_image
+              }
+              message={
+                websiteInfoByInstitute?.one_ins?.landing_control
+                  ?.about_society_dynamic?.founder_message_message
+              }
+              name={
+                websiteInfoByInstitute?.one_ins?.landing_control
+                  ?.about_society_dynamic?.founder_message_name
+              }
+            />
+          ) : selectedContent === "Vision Mission" ? (
+            <VisionMission
+              vision={
+                websiteInfoByInstitute?.one_ins?.landing_control
+                  ?.about_society_dynamic?.vision
+              }
+              mission={
+                websiteInfoByInstitute?.one_ins?.landing_control
+                  ?.about_society_dynamic?.mission
+              }
+            />
+          ) : selectedContent === "Organisation Structure" ? (
+            <OrganisationStructure
+              data={
+                websiteInfoByInstitute?.one_ins?.landing_control
+                  ?.about_society_dynamic?.organisation_structure
+              }
+            />
+          ) : (
+            <About
+              name={
+                websiteInfoByInstitute?.one_ins?.landing_control
+                  ?.about_society_dynamic?.dynamic_name
+              }
+              content={
+                websiteInfoByInstitute?.one_ins?.landing_control
+                  ?.about_society_dynamic?.about
+              }
+            />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default EducationSocietyUI;
