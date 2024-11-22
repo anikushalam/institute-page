@@ -2,6 +2,7 @@ import { useNoticeInstitute } from "@/api/api-hooks";
 import SubHeading from "../ui/sub-heading";
 import { useStore } from "@/store";
 import dayjs from "dayjs";
+import Link from "next/link";
 
 const Notice = ({ bgTheme }: { bgTheme: any }) => {
   const id = useStore((state) => state.id);
@@ -19,7 +20,8 @@ const Notice = ({ bgTheme }: { bgTheme: any }) => {
         </SubHeading>
         <ul className="mt-4">
           {notices?.announcement?.map((item: any, index: any) => (
-            <li
+            <Link
+              href="/notices"
               key={index}
               className="mb-3 bg-[#eee] h-[3.1rem] flex justify-start items-center"
             >
@@ -38,7 +40,7 @@ const Notice = ({ bgTheme }: { bgTheme: any }) => {
               >
                 {item.insAnnTitle}
               </button>
-            </li>
+            </Link>
           ))}
         </ul>
       </div>

@@ -139,62 +139,64 @@ const LandingWrapper = ({
   }
   // console.log(websiteInfoByInstitute?.one_ins?.website_looks?.logo);
   return (
-    <main className="flex flex-col min-h-screen">
-      {type != "naac" ? (
-        <TopMenu instituteAbout={websiteInfoByInstitute?.one_ins} />
-      ) : null}
-      <InsInfo
-        logo={
-          websiteInfoByInstitute?.one_ins?.landing_control?.home_header_object
-            ?.ins_logo
-            ? websiteInfoByInstitute?.one_ins?.landing_control
-                ?.home_header_object?.ins_logo
-            : websiteInfoByInstitute?.one_ins?.insProfilePhoto
-        }
-        name={
-          websiteInfoByInstitute?.one_ins?.landing_control?.home_header_object
-            ?.ins_name
-        }
-        address={
-          websiteInfoByInstitute?.one_ins?.landing_control?.home_header_object
-            ?.ins_address
-        }
-        affiliated={
-          websiteInfoByInstitute?.one_ins?.landing_control?.home_header_object
-            ?.affiliation_with
-        }
-        phone={
-          websiteInfoByInstitute?.one_ins?.landing_control?.home_header_object
-            ?.ins_phone_number
-        }
-        email={
-          websiteInfoByInstitute?.one_ins?.landing_control?.home_header_object
-            ?.ins_email
-        }
-        accreditations={
-          websiteInfoByInstitute?.one_ins?.landing_control?.home_header_object
-            ?.accreditations
-        }
-        bgTheme={
-          websiteInfoByInstitute?.one_ins?.landing_control
-            ?.home_background_object?.color_theme
-        }
-      />
-      {type != "naac" ? (
-        <MainMenu
-          academicCourse={
-            websiteInfoByInstitute?.one_ins?.landing_control
-              ?.academic_courses_desk
+    <>
+      <main className="flex flex-col min-h-screen">
+        {type != "naac" ? (
+          <TopMenu instituteAbout={websiteInfoByInstitute?.one_ins} />
+        ) : null}
+        <InsInfo
+          logo={
+            websiteInfoByInstitute?.one_ins?.landing_control?.home_header_object
+              ?.ins_logo
+              ? websiteInfoByInstitute?.one_ins?.landing_control
+                  ?.home_header_object?.ins_logo
+              : websiteInfoByInstitute?.one_ins?.insProfilePhoto
           }
-          uniqueCommittees={uniqueCommittees}
-          instituteAbout={websiteInfoByInstitute?.one_ins}
+          name={
+            websiteInfoByInstitute?.one_ins?.landing_control?.home_header_object
+              ?.ins_name
+          }
+          address={
+            websiteInfoByInstitute?.one_ins?.landing_control?.home_header_object
+              ?.ins_address
+          }
+          affiliated={
+            websiteInfoByInstitute?.one_ins?.landing_control?.home_header_object
+              ?.affiliation_with
+          }
+          phone={
+            websiteInfoByInstitute?.one_ins?.landing_control?.home_header_object
+              ?.ins_phone_number
+          }
+          email={
+            websiteInfoByInstitute?.one_ins?.landing_control?.home_header_object
+              ?.ins_email
+          }
+          accreditations={
+            websiteInfoByInstitute?.one_ins?.landing_control?.home_header_object
+              ?.accreditations
+          }
+          bgTheme={
+            websiteInfoByInstitute?.one_ins?.landing_control
+              ?.home_background_object?.color_theme
+          }
         />
-      ) : null}
-      {type != "naac" ? <News /> : null}
-      <div className="flex-grow">{children}</div>
-      <Footer instituteAbout={websiteInfoByInstitute?.one_ins} />
-      {/* <Megaphone /> */}
-    </main>
+        {type != "naac" ? (
+          <MainMenu
+            academicCourse={
+              websiteInfoByInstitute?.one_ins?.landing_control
+                ?.academic_courses_desk
+            }
+            uniqueCommittees={uniqueCommittees}
+            instituteAbout={websiteInfoByInstitute?.one_ins}
+          />
+        ) : null}
+        {type != "naac" ? <News /> : null}
+        <div className="flex-grow">{children}</div>
+        <Footer instituteAbout={websiteInfoByInstitute?.one_ins} />
+        {/* <Megaphone /> */}
+      </main>
+    </>
   );
 };
 

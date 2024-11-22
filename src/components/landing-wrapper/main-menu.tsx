@@ -288,7 +288,7 @@ const MainMenu = ({
                   <NavigationMenuItem>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
-                      href="/examination"
+                      href="/notices"
                     >
                       Notice
                     </NavigationMenuLink>
@@ -299,7 +299,7 @@ const MainMenu = ({
                   <NavigationMenuItem>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
-                      href="/examination"
+                      href="/alumini"
                     >
                       Alumini
                     </NavigationMenuLink>
@@ -310,7 +310,7 @@ const MainMenu = ({
                   <NavigationMenuItem>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
-                      href="/examination"
+                      href="/library"
                     >
                       Library
                     </NavigationMenuLink>
@@ -321,7 +321,7 @@ const MainMenu = ({
                   <NavigationMenuItem>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
-                      href="/examination"
+                      href="/contact-us"
                     >
                       Contact Us
                     </NavigationMenuLink>

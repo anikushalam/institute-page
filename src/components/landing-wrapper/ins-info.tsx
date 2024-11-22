@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
 import { imageShowUrl } from "@/lib/BaseUrl";
+import Link from "next/link";
 
 const CollegeHeader = ({
   logo,
@@ -43,24 +44,33 @@ const CollegeHeader = ({
           </div>
         </div>
         <div className="hidden md:flex flex-col items-center space-y-2 md:space-y-0 md:space-x-4">
-          <h2
-            className="text-md font-normal cursor-pointer hover:underline"
-            style={{ color: bgTheme }}
-          >
-            Institute Login
-          </h2>
-          <h2
-            className="text-md font-normal cursor-pointer hover:underline"
-            style={{ color: bgTheme }}
-          >
-            Faculty Login
-          </h2>
-          <h2
-            className="text-md font-normal cursor-pointer hover:underline"
-            style={{ color: bgTheme }}
-          >
-            Student Login
-          </h2>
+          <Link href="https://qvipleweb.web.app/#/log-in">
+            <h2
+              className="text-md font-normal cursor-pointer hover:underline"
+              style={{ color: bgTheme }}
+            >
+              ERP Login
+              {/* Institute Login */}
+            </h2>
+          </Link>
+          {/* <Link href="https://qvipleweb.web.app/#/log-in">
+            <h2
+              className="text-md font-normal cursor-pointer hover:underline"
+              style={{ color: bgTheme }}
+            >
+              Faculty Login
+            </h2>
+          </Link>
+
+          <Link href="https://qvipleweb.web.app/#/log-in">
+            <h2
+              className="text-md font-normal cursor-pointer hover:underline"
+              style={{ color: bgTheme }}
+            >
+              Student Login
+            </h2>
+          </Link> */}
+
           {/* <div className="flex items-center">
             <span className="bg-blue-500 text-white p-2 rounded-full mr-2">
               <svg
