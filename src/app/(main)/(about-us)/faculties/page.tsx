@@ -32,37 +32,32 @@ const Faculties = () => {
   };
   useEffect(() => {
     if (faculties?.staffIns.length > 0) {
-      // setTeaching(
-      //   faculties?.staffIns?.filter(
-      //     (item: any) => item?.teaching_type === "Teaching Faculty"
-      //   )
-      // );
-      // setNonTeaching(
-      //   faculties?.staffIns?.filter(
-      //     (item: any) => item?.teaching_type === "Non-Teaching Faculty"
-      //   )
-      // );
-      // setOther(
-      //   faculties?.staffIns?.filter(
-      //     (item: any) => item?.teaching_type === "Other" || !item?.teaching_type
-      //   )
-      // );
-      const ans = faculties.staffIns.reduce(
-        (acc: any, curr: any) => {
-          if (curr.teaching_type === "Teaching Faculty") {
-            acc.teaching.push(curr);
-          } else if (curr.teaching_type === "Non-Teaching Faculty") {
-            acc.nonteaching.push(curr);
-          } else {
-            acc.other.push(curr);
-          }
-          return acc;
-        },
-        { teaching: [], nonteaching: [], other: [] }
-      );
-      setTeaching(ans.teaching);
-      setNonTeaching(ans.nonteaching);
-      setOther(ans.other);
+      let tc: any = [];
+      let ntc: any = [];
+      let ot: any = [];
+      for (let st of faculties.staffIns) {
+        if (
+          ["Teaching", "Teaching Faculty"]?.includes(st?.teaching_type) ||
+          ["Teaching", "Teaching Faculty"]?.includes(st?.staff_technicality)
+        ) {
+          tc.push(st);
+        } else if (
+          ["Non-Teaching", "Non-Teaching Faculty"]?.includes(
+            st?.teaching_type
+          ) ||
+          ["Non-Teaching", "Non-Teaching Faculty"]?.includes(
+            st?.staff_technicality
+          )
+        ) {
+          ntc.push(st);
+        } else {
+          ot.push(st);
+        }
+      }
+
+      setTeaching(tc);
+      setNonTeaching(ntc);
+      setOther(ot);
     }
   }, [faculties?.staffIns]);
   return (

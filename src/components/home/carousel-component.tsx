@@ -6,12 +6,12 @@ const CarouselComponent = (images: any) => {
   return (
     <Carousel
       plugins={[Autoplay({ delay: 4000 })]}
-      className="w-[75%] h-[30rem]"
+      className="w-[75%] h-[25rem]"
     >
       <CarouselContent className="w-full">
         {images.images.map((image: string, index: number) => (
           <CarouselItem key={index}>
-            <div className="h-[30rem]">
+            <div className="h-[25rem]">
               <img
                 src={`${imageShowUrl}/${image}`}
                 alt="images"

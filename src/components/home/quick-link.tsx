@@ -3,8 +3,8 @@ import SubHeading from "../ui/sub-heading";
 import Link from "next/link";
 const QuickLink = ({ quickLinks }: { quickLinks: any }) => {
   return (
-    <div className="flex flex-col w-[25%] h-[30rem]">
-      <SubHeading className="font-extrabold text-[1.2rem] -mt-2">
+    <div className="flex flex-col w-[25%] h-[25rem]">
+      <SubHeading className="font-extrabold text-[1.2rem] -mt-1 mb-2">
         Quick Links
       </SubHeading>
 
@@ -16,7 +16,7 @@ const QuickLink = ({ quickLinks }: { quickLinks: any }) => {
               : quickLinks?.link_1?.link_images
           }
           target="_blank"
-          className=" border-l-4 border-prime px-3 py-4 my-2 bg-gray-200 hover:text-prime w-full md:w-11/12 block"
+          className=" border-l-4 border-prime px-3 py-3 my-1 bg-gray-200 hover:text-prime w-full md:w-11/12 block"
         >
           {quickLinks?.link_1?.name}
         </Link>
@@ -28,7 +28,7 @@ const QuickLink = ({ quickLinks }: { quickLinks: any }) => {
               : quickLinks?.link_2?.link_images
           }
           target="_blank"
-          className=" border-l-4 border-prime px-3 py-4 my-2 bg-gray-200 hover:text-prime w-full md:w-11/12 block"
+          className=" border-l-4 border-prime px-3 py-3 my-1 bg-gray-200 hover:text-prime w-full md:w-11/12 block"
         >
           {quickLinks?.link_2?.name}
         </Link>
@@ -40,7 +40,7 @@ const QuickLink = ({ quickLinks }: { quickLinks: any }) => {
               : quickLinks?.link_3?.link_images
           }
           target="_blank"
-          className=" border-l-4 border-prime px-3 py-4 my-2 bg-gray-200 hover:text-prime w-full md:w-11/12 block"
+          className=" border-l-4 border-prime px-3 py-3 my-1 bg-gray-200 hover:text-prime w-full md:w-11/12 block"
         >
           {quickLinks?.link_3?.name}
         </Link>
@@ -51,7 +51,7 @@ const QuickLink = ({ quickLinks }: { quickLinks: any }) => {
               : quickLinks?.link_4?.link_images
           }
           target="_blank"
-          className=" border-l-4 border-prime px-3 py-4 my-2 bg-gray-200 hover:text-prime w-full md:w-11/12 block"
+          className=" border-l-4 border-prime px-3 py-3 my-1 bg-gray-200 hover:text-prime w-full md:w-11/12 block"
         >
           {quickLinks?.link_4?.name}
         </Link>
@@ -63,7 +63,7 @@ const QuickLink = ({ quickLinks }: { quickLinks: any }) => {
               : quickLinks?.link_5?.link_images
           }
           target="_blank"
-          className=" border-l-4 border-prime px-3 py-4 my-2 bg-gray-200 hover:text-prime w-full md:w-11/12 block"
+          className=" border-l-4 border-prime px-3 py-3 my-1 bg-gray-200 hover:text-prime w-full md:w-11/12 block"
         >
           {quickLinks?.link_5?.name}
         </Link>
@@ -75,7 +75,7 @@ const QuickLink = ({ quickLinks }: { quickLinks: any }) => {
               : quickLinks?.link_6?.link_images
           }
           target="_blank"
-          className=" border-l-4 border-prime px-3 py-4 my-2 bg-gray-200 hover:text-prime w-full md:w-11/12 block"
+          className=" border-l-4 border-prime px-3 py-3 my-1 bg-gray-200 hover:text-prime w-full md:w-11/12 block"
         >
           {quickLinks?.link_6?.name}
         </Link>

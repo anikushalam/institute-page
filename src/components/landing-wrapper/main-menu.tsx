@@ -327,6 +327,26 @@ const MainMenu = ({
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 ) : null}
+                {/* {instituteAbout?.landing_control?.tab_toggle?.image_gallery ? ( */}
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    href="/contact-us"
+                  >
+                    Photo Gallery
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                {/* ) : null} */}
+                {/* {instituteAbout?.landing_control?.tab_toggle?.video_gallery ? ( */}
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    href="/contact-us"
+                  >
+                    Video Gallery
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                {/* ) : null} */}
               </NavigationMenuList>
             </NavigationMenu>
           </div>
