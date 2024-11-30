@@ -15,6 +15,7 @@ const Home = () => {
   // redirect("/home");
   const id = useStore((state) => state.id);
   const { data: websiteInfoByInstitute } = useWebsiteInfoByInstitute(id);
+
   return (
     <LandingWrapper>
       <>
@@ -34,42 +35,42 @@ const Home = () => {
               {/* {websiteInfoByInstitute?.one_ins?.landing_control
               ?.home_opener_quick_links && ( */}
               <QuickLink
-                // quickLinks={
-                //   websiteInfoByInstitute?.one_ins?.landing_control
-                //     ?.home_opener_quick_links
-                // }
-                quickLinks={{
-                  link_1: {
-                    name: "Quick Link 1 Name",
-                    typo: "YES",
-                    link_images: "",
-                  },
-                  link_2: {
-                    name: "Quick Link 2 Name",
-                    typo: "YES",
-                    link_images: "https://www.youtube.com/watch?v=1BVcuhftIgc",
-                  },
-                  link_3: {
-                    name: "Quick Link 3 Name",
-                    typo: "YES",
-                    link_images: "https://www.youtube.com/watch?v=1BVcuhftIgc",
-                  },
-                  link_4: {
-                    name: "Quick Link 4 Name",
-                    typo: "YES",
-                    link_images: "https://www.youtube.com/watch?v=1BVcuhftIgc",
-                  },
-                  link_5: {
-                    name: "Quick Link 5 Name",
-                    typo: "YES",
-                    link_images: "https://github.com/dashboard",
-                  },
-                  link_6: {
-                    name: "My Six Edited",
-                    typo: "NO",
-                    link_images: "20200828_033.jpg",
-                  },
-                }}
+                quickLinks={
+                  websiteInfoByInstitute?.one_ins?.landing_control
+                    ?.home_opener_quick_links
+                }
+                // quickLinks={{
+                //   link_1: {
+                //     name: "Quick Link 1 Name",
+                //     typo: "YES",
+                //     link_images: "",
+                //   },
+                //   link_2: {
+                //     name: "Quick Link 2 Name",
+                //     typo: "YES",
+                //     link_images: "https://www.youtube.com/watch?v=1BVcuhftIgc",
+                //   },
+                //   link_3: {
+                //     name: "Quick Link 3 Name",
+                //     typo: "YES",
+                //     link_images: "https://www.youtube.com/watch?v=1BVcuhftIgc",
+                //   },
+                //   link_4: {
+                //     name: "Quick Link 4 Name",
+                //     typo: "YES",
+                //     link_images: "https://www.youtube.com/watch?v=1BVcuhftIgc",
+                //   },
+                //   link_5: {
+                //     name: "Quick Link 5 Name",
+                //     typo: "YES",
+                //     link_images: "https://github.com/dashboard",
+                //   },
+                //   link_6: {
+                //     name: "My Six Edited",
+                //     typo: "NO",
+                //     link_images: "20200828_033.jpg",
+                //   },
+                // }}
               />
               {/* )} */}
             </div>

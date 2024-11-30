@@ -34,7 +34,8 @@ const TestimonialCard = ({ name, image, bio, link }: any) => (
         <p className="text-gray-800 mb-4 text-start">{bio}</p>
         <h3 className="font-bold text-lg text-start">{name}</h3>
         <Button className="mt-4 border-primary hover:border-primary hover:border-[2px] hover:text-primary">
-          <Link href={"/institute"}>Follow</Link>
+          {/* <Link href={"/institute"}>Follow</Link> */}
+          Follow
         </Button>
       </div>
     </div>

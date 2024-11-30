@@ -35,6 +35,7 @@ export interface State {
 export const useStore = create<State>((set) => ({
   insName: undefined,
   name: undefined,
+  id: "",
   // id: "651ba22de39dbdf817dd520c",
   // id: "660bd1c7d5016c9947aef713",
   // rs sapat
@@ -42,7 +43,7 @@ export const useStore = create<State>((set) => ({
   // pvg
   // id: "6660214803ff919dc4b26877",
   // nes/
-  id: "65c48434896ca745f41b7381",
+  // id: "65c48434896ca745f41b7381",
 
   color: undefined,
   status: undefined,

@@ -48,6 +48,8 @@ import {
   fetchScholarshipListAdmission,
   fetchSiteOpener,
   fetchWebsiteInfoByInstitute,
+
+  // for new api:
 } from "./query";
 import { data } from "@/lib/type";
 import { sendEnquiry } from "./mutation";
@@ -218,7 +220,7 @@ export const useOneFeeStructureDetail = (fsid: string | undefined) => {
   });
 };
 
-export const useHostInstitute = (filter_by: string | undefined) => {
+export const useHostInstitute = (filter_by: any) => {
   return useQuery({
     queryKey: ["hostInstitute", filter_by],
     queryFn: () => fetchHostInstitute(filter_by!),

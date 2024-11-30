@@ -38,12 +38,12 @@ const AboutIns = ({
         <SubHeading className="font-extrabold text-[1.2rem] -mt-4 -mb-3">
           About Institute
         </SubHeading>
-        <p className="text-gray-700 text-justify leading-5 pl-2 mt-4">
+        <div className="text-gray-700 text-justify leading-5 pl-2 mt-4">
           <TruncateText text={home_object.about} />
           <Button className="mt-6 border-primary hover:border-primary hover:border-[2px] hover:text-primary">
             <Link href={"/institute"}>Read More</Link>
           </Button>
-        </p>
+        </div>
       </div>
       <Notice bgTheme={bgTheme} />
     </div>
