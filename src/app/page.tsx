@@ -22,7 +22,7 @@ const Home = () => {
         <div className="w-full flex flex-col gap-4">
           {websiteInfoByInstitute?.one_ins?.landing_control?.screen_toggle
             ?.bg_image ? (
-            <div className="flex gap-4 h-[25rem]">
+            <div className="flex h-[22rem]">
               {websiteInfoByInstitute?.one_ins?.landing_control
                 ?.home_background_object?.images.length > 0 && (
                 <CarouselComponent

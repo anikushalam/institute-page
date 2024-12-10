@@ -20,13 +20,15 @@ const OnePinnedDepartment: React.FC<OnePinnedDepartmentProps> = ({ item }) => {
 
   return (
     <li>
-      <div className="text-md font-semibold leading-none">{item}</div>
-      <div>
+      <div className="text-md font-semibold underline underline-offset-8 mb-2">
+        {item}
+      </div>
+      <ul className="list-disc">
         {onepinnedData &&
           onepinnedData.ins.map((department: any) => (
-            <div
+            <li
               key={department._id}
-              className=" list-disc  block select-none space-y-1 rounded-md pt-1 leading-none no-underline outline-none transition-colors hover:font-medium hover:text-accent-foreground focus:font-medium focus:text-accent-foreground"
+              className="block select-none space-y-1 rounded-md py-1 no-underline outline-none transition-colors hover:font-medium hover:text-accent-foreground focus:font-medium focus:text-accent-foreground"
             >
               <Link
                 href={`/department/${item}/${department._id}`}
@@ -34,9 +36,9 @@ const OnePinnedDepartment: React.FC<OnePinnedDepartmentProps> = ({ item }) => {
               >
                 {department.dName}
               </Link>
-            </div>
+            </li>
           ))}
-      </div>
+      </ul>
     </li>
   );
 };

@@ -20,7 +20,6 @@ import ContactCard from "./_ui/contact-us";
 import Link from "next/link";
 import Labrotory from "./_ui/labrotory";
 import { Separator } from "@/components/ui/separator";
-import Heading from "@/components/ui/heading";
 import HeadingWithImage from "@/components/ui/heading-with-image";
 
 const Department = () => {
@@ -47,7 +46,7 @@ const Department = () => {
       );
     }
   }, [AllDepartment, did]);
-  console.log(currentDepartment);
+  // console.log(currentDepartment);
   return (
     <div>
       <div className="flex flex-col ">

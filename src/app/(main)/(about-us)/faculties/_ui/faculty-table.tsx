@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
 import ImageViewer from "@/components/ui/image-viewer";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -9,7 +8,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { imageShowUrl } from "@/lib/BaseUrl";
-import Image from "next/image";
 import React from "react";
 
 const FacultyTable = ({
@@ -21,7 +19,6 @@ const FacultyTable = ({
   name: string;
   table?: boolean;
 }) => {
-  console.log(data);
   return (
     <div className="w-full">
       {table ? (

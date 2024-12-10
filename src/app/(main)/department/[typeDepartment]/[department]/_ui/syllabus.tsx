@@ -8,7 +8,7 @@ import React, { useState } from "react";
 
 const Syllabus = ({ syllabus }: { syllabus: any }) => {
   const [viewPdf, setViewPdf] = useState<any>();
-  console.log(syllabus);
+  // console.log(syllabus);
   return (
     <div className="space-y-4">
       <SubHeading className="text-2xl">Syllabus</SubHeading>

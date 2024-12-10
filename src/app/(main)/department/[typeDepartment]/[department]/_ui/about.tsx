@@ -19,7 +19,11 @@ const About = ({ data }: { data: any }) => {
             <div className="flex md:inline md:float-right  m-4">
               <div className=" w-full flex flex-col items-center justify-center text-center p-2 float-left">
                 <ImageViewer
-                  src={`${imageShowUrl}/${item?.sub_heading_image}`}
+                  src={
+                    item?.sub_heading_image
+                      ? `${imageShowUrl}/${item?.sub_heading_image}`
+                      : "/avtar.webp"
+                  }
                   alt="founder image"
                   width={250}
                   height={250}

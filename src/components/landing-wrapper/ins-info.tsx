@@ -36,7 +36,7 @@ const CollegeHeader = ({
           />
           <div>
             <h1 className="text-xs font-normal">{affiliated}</h1>
-            <h2 className="text-xl font-bold" style={{ color: bgTheme }}>
+            <h2 className="text-2xl font-bold" style={{ color: bgTheme }}>
               {name}
             </h2>
             <p className="text-sm">{accreditations ?? ""}</p>
