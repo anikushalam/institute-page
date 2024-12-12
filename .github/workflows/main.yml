@@ -38,15 +38,29 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/demo-institute:latest
 
-      # SSH into your server and perform docker-compose up
-      - name: SSH and update server
-        uses: appleboy/ssh-action@v0.1.5
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}  
-          port: 22
-          script: |
-            cd /home/ubuntu
-            docker-compose pull demo-institute
-            docker-compose up -d --force-recreate demo-institute
+      # Deploy to EC2
+      - name: Deploy to EC2
+        env:
+          # Environment variables for EC2 SSH access
+          USERNAME: ${{ secrets.USERNAME }}  
+          HOST: ${{ secrets.HOST }}         
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}  
+        run: |
+          # Step 1: Write the private key content to a file
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
+          chmod 600 private_key.pem  # Restrict permissions for security
+
+          # Step 2: SSH into the EC2 instance and execute Docker Compose commands
+          ssh -o StrictHostKeyChecking=no -i private_key.pem $USERNAME@$HOST << 'EOF'
+            # Navigate to the directory containing the docker-compose.yml file
+            cd /home/ubuntu/
+
+            # Pull the latest Docker image from the registry
+            docker-compose pull
+
+            # Restart the application with the new image
+            docker-compose up -d
+          EOF
+
+          # Step 3: Clean up the private key file after use
+          rm private_key.pem
