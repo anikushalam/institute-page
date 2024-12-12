@@ -48,5 +48,5 @@ jobs:
           port: 22
           script: |
             cd /home/ubuntu
-            docker-compose pull demo-institute:latest
-            docker-compose up -d
+            docker-compose pull demo-institute
+            docker-compose up -d --force-recreate demo-institute
